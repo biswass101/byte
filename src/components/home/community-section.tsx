@@ -2,7 +2,7 @@ import TestimonialCard from "@/components/shared/testimonial-card";
 
 export default function CommunitySection() {
   return (
-    <section className="community-section" aria-labelledby="community-title">
+    <section className="community-section" aria-labelledby="community-title ">
       <div className="community-heading">
         <h2 id="community-title">Discover What Our<br />Community Is Saying</h2>
         <p>At ByteSpace, our vibrant community of learners and creators is at the heart of what we do. Hear directly from those who have experienced the transformative journey of learning and creating on our platform. Explore testimonials that reflect the diverse perspectives of enthusiastic learners and accomplished creators.</p>
