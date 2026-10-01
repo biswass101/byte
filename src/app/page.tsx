@@ -28,10 +28,10 @@ export default function Home() {
         </nav>
 
         <div className="account-nav">
-          <a className="nav-link" href="#sign-in">
+          <a className="nav-link" href="/login">
             Sign In
           </a>
-          <a className="nav-link" href="#join-us">
+          <a className="nav-link" href="/signup">
             Join Us
           </a>
           <a className="bag-link" href="#bag" aria-label="Shopping bag">
@@ -329,7 +329,108 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="creator-cta" id="creators" aria-labelledby="creator-cta-title">
+        <Image className="creator-deco creator-deco-left" src="/left_spiral.png" alt="" width={267} height={387} />
+        <Image className="creator-deco creator-deco-white" src="/left_spiral_whilte.png" alt="" width={177} height={176} />
+        <Image className="creator-deco creator-deco-cone" src="/Cone.png" alt="" width={190} height={189} />
+        <Image className="creator-deco creator-deco-cylinder" src="/cylinder_right.png" alt="" width={213} height={372} />
+        <Image className="creator-deco creator-deco-donut" src="/donut_left.png" alt="" width={344} height={343} />
+        <div className="creator-cta-content">
+          <h2 id="creator-cta-title">Unlock Your Potential as a<br />Creator with ByteSpace</h2>
+          <p>
+            Experience the collaboration of numerous creators and an expanding selection of courses. Register now and become a
+            <br className="desktop-break" />
+            part of a community comprising over 10,000 local and international creators. Utilize our Course Editor, and showcase your
+            <br className="desktop-break" />
+            expertise by publishing your finest course on the ByteSpace Course Library.
+          </p>
+          <a className="creator-cta-button" href="/signup">Join as Creator</a>
+        </div>
+      </section>
+
+      <section className="community-section" aria-labelledby="community-title">
+        <div className="community-heading">
+          <h2 id="community-title">Discover What Our<br />Community Is Saying</h2>
+          <p>
+            At ByteSpace, our vibrant community of learners and creators is at the heart of what we do. Hear directly from those who
+            have experienced the transformative journey of learning and creating on our platform. Explore testimonials that reflect
+            the diverse perspectives of enthusiastic learners and accomplished creators.
+          </p>
+        </div>
+        <div className="testimonial-grid">
+          <Testimonial initials="SA" name="Sarah M." role="Enthusiastic Learner" avatarClass="avatar-sarah">
+            &quot;ByteSpace has transformed my approach to learning. The diverse range of courses and the quality of content provided by creators have exceeded my expectations. The platform truly fosters a sense of community and lifelong learning.&quot;
+          </Testimonial>
+          <Testimonial initials="JL" name="James L." role="Lifelong Learner" avatarClass="avatar-james">
+            &quot;I&apos;ve tried several online learning platforms, and ByteSpace stands out for its vibrant community and the variety of courses available. The easy navigation and engaging content make it a go-to platform for continuous skill development.&quot;
+          </Testimonial>
+          <Testimonial initials="AB" name="Alex B." role="Inspired Creator" avatarClass="avatar-alex">
+            &quot;As a creator, ByteSpace has been a game-changer for me. The Course Editor is user-friendly, and the support from the community is incredible. It&apos;s fulfilling to see my courses making a positive impact on learners globally.&quot;
+          </Testimonial>
+        </div>
+      </section>
+
+      <footer className="site-footer">
+        <div className="footer-main">
+          <div className="footer-newsletter">
+            <a className="footer-brand" href="#top" aria-label="ByteSpace home">
+              <Image src="/logo.png" alt="" width={29} height={32} />
+              <span>ByteSpace</span>
+            </a>
+            <p>Stay Up to date with our latest features and releases by joining our newsletter.</p>
+            <form className="newsletter-form">
+              <label className="sr-only" htmlFor="newsletter-email">Email address</label>
+              <input id="newsletter-email" type="email" placeholder="Enter your email" required />
+              <button type="submit">Search</button>
+            </form>
+            <small>By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.</small>
+          </div>
+          <div className="footer-links">
+            <div>
+              <a href="#courses">Featured Courses</a>
+              <a href="#categories">Featured Categories</a>
+              <a href="#business">Business</a>
+              <a href="#it">IT</a>
+              <a href="#design">Design</a>
+            </div>
+            <div>
+              <a href="#development">Development</a>
+              <a href="#marketing">Marketing</a>
+              <a href="#photography">Photography</a>
+              <a href="#finance">Finance</a>
+              <a href="#sport">Sport</a>
+            </div>
+            <div>
+              <a href="#creators">Become a Creator</a>
+              <a href="#affiliate">Affiliate Program</a>
+              <a href="#contact">Contact</a>
+              <a href="#help">Help</a>
+              <a href="#about">About</a>
+            </div>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <span>© 2023 ByteSpace. All rights reserved.</span>
+          <div>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+            <a href="#cookies">Cookies Settings</a>
+          </div>
+        </div>
+      </footer>
     </div>
+  );
+}
+
+function Testimonial({ initials, name, role, avatarClass, children }: { initials: string; name: string; role: string; avatarClass: string; children: React.ReactNode }) {
+  return (
+    <article className="testimonial-card">
+      <span className={`testimonial-avatar ${avatarClass}`} aria-hidden="true">{initials}</span>
+      <h3>{name}</h3>
+      <p className="testimonial-role">{role}</p>
+      <p className="testimonial-quote">{children}</p>
+    </article>
   );
 }
 
